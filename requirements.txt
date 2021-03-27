@@ -1,0 +1,5 @@
+pyexcel-ods==0.5.6
+tweepy==3.10.0
+apscheduler==3.7.0
+sklearn==0.0
+numpy==1.16.6
