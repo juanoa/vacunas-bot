@@ -6,4 +6,4 @@
 
 ## Más información
 
-Puedes leer toda la información sobre su desarrollo [aquí](https://www.juanoa.com).
+Puedes leer toda la información sobre su desarrollo [aquí](https://www.juanoa.com/desarrollo/bot-twitter-estado-vacunacion-covid-19).
