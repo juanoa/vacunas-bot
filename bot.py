@@ -352,8 +352,10 @@ def main(today):
     # Extraemos los datos que nos pueden interesar
     try:
         array_totales = datos[u'Comunicación'][-2]
-        dosis_administradas = array_totales[-3]
+        dosis_administradas = array_totales[-4]
         porc_admin = round((dosis_administradas/float(POBLACION_ESP)*100), 2)
+        personas_una_dosis = array_totales[-2]
+        personas_una_dosis_porc = round((personas_una_dosis/float(POBLACION_ESP)*100), 2)
         personas_vacunadas = array_totales[-1]
         porc_vac = round((personas_vacunadas/float(POBLACION_ESP)*100), 2)
     except:
@@ -372,7 +374,7 @@ def main(today):
     barra_progreso = obtener_barra_progreso(porc_vac)
 
     # Formulamos el tweet
-    tweet = """{} \n\n💉 Dosis administradas: {} \n👤 Personas vacunadas: {} \n\nPOBLACIÓN VACUNADA: {}% ✌️\n\n{}\n\n📆 Est. 50%: {}""".format(fecha_actual_str, "{:,}".format(dosis_administradas).replace(',','.'), "{:,}".format(personas_vacunadas).replace(',','.'), str(porc_vac).replace('.', ','), barra_progreso, fecha_estimada_str)
+    tweet = """{} \n\n💉 Dosis administradas: {} \n👤 Personas 1 dosis: {} ({}%) \n\n💃 Personas vacunadas: {} \nPOBLACIÓN VACUNADA: {}% ✌️\n\n{}\n\n📆 Est. 50%: {}""".format(fecha_actual_str, "{:,}".format(dosis_administradas).replace(',','.'), "{:,}".format(personas_una_dosis).replace(',','.'), str(personas_una_dosis_porc).replace('.', ','), "{:,}".format(personas_vacunadas).replace(',','.'), str(porc_vac).replace('.', ','), barra_progreso, fecha_estimada_str)
 
     # Ontenemos los tweets de las comunidades
     comunidades = obtener_tweets_comunidades(datos[u'Comunicación'])
