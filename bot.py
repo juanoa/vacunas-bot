@@ -351,7 +351,7 @@ def main(today):
 
     # Extraemos los datos que nos pueden interesar
     try:
-        array_totales = datos[u'Comunicación'][-2]
+        array_totales = datos[u'Comunicación'][21]
         dosis_administradas = array_totales[-4]
         porc_admin = round((dosis_administradas/float(POBLACION_ESP)*100), 2)
         personas_una_dosis = array_totales[-2]
